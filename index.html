@@ -412,7 +412,7 @@
             <div class="space10"></div>
             <div class="contact3-box" data-aos="fade-right" data-aos-duration="1000">
               <div class="icon">
-                <img src="assets/images/icons/contact4-icon1.png" alt="">
+                <img src="assets/images/icons/call.png" alt="">
               </div>
               <div class="heading4">
                 <h6>Gives us a Call</h6>
@@ -422,7 +422,7 @@
 
             <div class="contact3-box" data-aos="fade-right" data-aos-duration="1200">
               <div class="icon">
-                <img src="assets/images/icons/contact4-icon2.png" alt="">
+                <img src="assets/images/icons/email.png" alt="">
               </div>
               <div class="heading4">
                 <h6>Send me Mail</h6>
@@ -444,41 +444,35 @@
 
             <div class="space10"></div>
 
-            <form action="#">
+            <form id="contactForm">
               <div class="row">
                 <div class="col-md-6">
                   <div class="single-input">
-                    <input type="text" placeholder="First Name">
+                    <input type="text" name="name" placeholder="Name" required>
                   </div>
                 </div>
 
                 <div class="col-md-6">
                   <div class="single-input">
-                    <input type="text" placeholder="Last Name">
+                    <input type="email" name="email"  placeholder="Email" required>
                   </div>
                 </div>
 
                 <div class="col-md-6">
                   <div class="single-input">
-                    <input type="email" placeholder="Email">
+                    <input type="text" name="phone" placeholder="Phone" required>
                   </div>
                 </div>
 
                 <div class="col-md-6">
                   <div class="single-input">
-                    <input type="number" placeholder="Phone">
+                    <input type="text" name="subject" placeholder="Subject" required>
                   </div>
                 </div>
 
                 <div class="col-md-12">
                   <div class="single-input">
-                    <input type="text" placeholder="Subject">
-                  </div>
-                </div>
-
-                <div class="col-md-12">
-                  <div class="single-input">
-                    <textarea rows="4" placeholder="Message"></textarea>
+                    <textarea rows="4" name="message" placeholder="Message" required></textarea>
                   </div>
                 </div>
 
@@ -490,6 +484,8 @@
 
               </div>
             </form>
+            <div id="loader"></div> <!-- Loader Element -->
+            <div id="responseMessage"></div> <!-- Success/Error Message -->
 
 
           </div>
@@ -644,6 +640,31 @@
   <script src="assets/js/jquery.lineProgressbar.js"></script>
   <script src="assets/js/tilt.jquery.js"></script>
   <script src="assets/js/main.js"></script>
+
+
+  <script>
+      $(document).ready(function () {
+          $("#contactForm").submit(function (e) {
+              e.preventDefault(); // Prevent default form submission
+
+              $("#loader").show(); // Show loader
+
+              $.ajax({
+                  url: "contact.php",
+                  type: "POST",
+                  data: $(this).serialize(),
+                  success: function (response) {
+                      $("#loader").hide(); // Hide loader
+                      $("#responseMessage").html(response); // Show response message
+                  },
+                  error: function () {
+                      $("#loader").hide(); // Hide loader
+                      $("#responseMessage").html("<p style='color: red;'>Something went wrong!</p>");
+                  }
+              });
+          });
+      });
+  </script>
 </body>
 
 </html>

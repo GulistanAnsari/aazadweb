@@ -62,10 +62,9 @@
     .mobile-header-elements .mobile-logo{
         max-width: 140px;
     }
-    
     .mobile-nav-icon {
-        font-size: 23px;
-        border: 1px solid;
+        font-size: 26px;
+        border: none;
         width: 40px;
         height: 40px;
         display: flex;
@@ -73,18 +72,6 @@
         justify-content: center;
         border-radius: 4px;
         color: #000;
-    }
-    
-    .mobile-nav-icon {
-        font-size: 23px;
-        border: 1px solid;
-        width: 40px;
-        height: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 4px;
-        color: #000000;
     }
     
     .mobile-sidebar {

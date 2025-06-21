@@ -2018,7 +2018,7 @@ body.body {
 }
 @media (max-width: 767px) {
   .heading4 h2 {
-    font-size: var(--f-fs-font-fs32);
+    font-size: var(--f-fs-font-fs28);
     line-height: var(--f-fs-font-fs40);
   }
 }
@@ -2036,7 +2036,7 @@ body.body {
 }
 .heading4 h4 a {
   display: inline-block;
-  font-size: var(--f-fs-font-fs24);
+  font-size: var(--f-fs-font-fs20);
   line-height: var(--f-fs-font-fs24);
   color: var(--vtc-text-heading-text-2);
   font-weight: var(--f-fw-bold);
@@ -2128,7 +2128,7 @@ body.body {
 }
 @media (max-width: 767px) {
   .heading5 h2 {
-    font-size: var(--f-fs-font-fs32);
+    font-size: var(--f-fs-font-fs28);
     line-height: var(--f-fs-font-fs40);
   }
 }
@@ -8778,7 +8778,7 @@ body.body {
 }
 @media (max-width: 767px) {
   .hero-area4 .main-heading h1 {
-    font-size: var(--f-fs-font-fs40);
+    font-size: var(--f-fs-font-fs36);
     line-height: var(--f-fs-font-fs48);
   }
 }
@@ -20938,8 +20938,14 @@ li.has-dropdown1 span {
   line-height: var(--f-fs-font-fs16);
 }
 
-/*
-::::::::::::::::::::::::::
- NAV MENU AREA CSS
-::::::::::::::::::::::::::
-*//*# sourceMappingURL=main.css.map */
+@media (max-width: 767px) {
+  .contact4 .contact3-box {
+    padding: 20px 20px;
+  }
+  .contact4 .contact3-box .heading4 h6 {
+    font-size: var(--f-fs-font-fs16);
+  }
+  .heading4 h4 a{
+     font-size: var(--f-fs-font-fs18);
+  }
+}
